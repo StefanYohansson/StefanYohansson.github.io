@@ -1,0 +1,25 @@
+{
+  "name": "purebeauty",
+  "version": "1.0.0",
+  "description": "minimalistic, sexy, beautiful (jekyll) theme :kiss:",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StefanYohansson/purebeauty.git"
+  },
+  "author": "StefanYohansson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/StefanYohansson/purebeauty/issues"
+  },
+  "homepage": "https://github.com/StefanYohansson/purebeauty#readme",
+  "dependencies": {
+    "animate.css": "^3.5.1",
+    "jquery": "^2.2.1",
+    "normalize.css": "^3.0.3",
+    "purecss": "^0.6.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0"
+  }
+}

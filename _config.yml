@@ -1,0 +1,11 @@
+# Site settings
+title: PureBeauty
+email: sy.fen0@gmail.com
+description: "minimalistic, sexy, beautiful (jekyll) theme."
+baseurl: ""
+url: ""
+github_username:  StefanYohansson
+
+# Build settings
+markdown: kramdown
+permalink: pretty
