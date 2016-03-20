@@ -190,6 +190,10 @@ a:visited {
   font-size: 42px;
   margin-bottom: 25px; }
 
+.home h2 {
+  font-size: 32px;
+  margin-bottom: 25px; }
+
 .home-p, .post-header h1 {
   color: #C24A43;
   border-bottom: 1px dashed #FFA7A2; }
