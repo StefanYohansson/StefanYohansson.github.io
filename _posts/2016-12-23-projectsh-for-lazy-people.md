@@ -2,6 +2,7 @@
 layout: post
 title: ProjectSH for lazy people
 introduction: How direnv lead me to write a new tool to complete it.
+comments: true
 ---
 
 Have you ever need to change from one project to another? If you get yourself writing `cd ../../ [...]` just to go somewhere else to execute one command or cat a file or something else, I know your pain.
