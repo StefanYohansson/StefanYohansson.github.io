@@ -3,11 +3,73 @@
   <channel>
     <title>PureBeauty</title>
     <description>minimalistic, sexy, beautiful (jekyll) theme.</description>
-    <link>/</link>
-    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 20 Mar 2016 15:33:02 -0300</pubDate>
-    <lastBuildDate>Sun, 20 Mar 2016 15:33:02 -0300</lastBuildDate>
-    <generator>Jekyll v3.1.1</generator>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Fri, 23 Dec 2016 10:50:15 -0300</pubDate>
+    <lastBuildDate>Fri, 23 Dec 2016 10:50:15 -0300</lastBuildDate>
+    <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>ProjectSH for lazy people</title>
+        <description>&lt;p&gt;Have you ever need to change from one project to another? If you get yourself writing &lt;code class=&quot;highlighter-rouge&quot;&gt;cd ../../ [...]&lt;/code&gt; just to go somewhere else to execute one command or cat a file or something else, I know your pain.&lt;/p&gt;
+
+&lt;p&gt;Recently, I found a project called &lt;code class=&quot;highlighter-rouge&quot;&gt;direnv&lt;/code&gt;, an environment switcher for the shell, and things start make sense for me. When I go to a folder, direnv automagically execute a script to configure/initialize things, so I just need to start coding. Everything was beautiful until I start programming in projects using API + front-end as separated projects, now things start being annoying again.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-problem&quot;&gt;The Problem&lt;/h1&gt;
+
+&lt;p&gt;normal people: open one terminal, open two tabs, on first tab open things from project 1, maybe tiled on tmux maybe not, on second tab open things from project 2. Hard lift is just switch between tabs.
+Think this way, you are on tab 1, writing things to your front-end project using vim, so you realize that a migration is missing on your API and need to go to another project. It will be nice if we have something like:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ goto project2
+
+/* edit some things */
+/* execute commands */
+
+$ goto project1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Or if you are lazy like me: Imagine that you just woke up and will start programming, when you open the terminal, need to &lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt; to your project folder.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-solution&quot;&gt;The Solution&lt;/h1&gt;
+
+&lt;p&gt;Today, I write a solution for me (maybe only my problem). I just called &lt;a href=&quot;https://github.com/StefanYohansson/projectsh&quot;&gt;projectsh&lt;/a&gt;, it’s an easy jump between projects and it’s easy to use (at least for me).&lt;/p&gt;
+
+&lt;p&gt;You just need to go into your project 1 folder and type:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cd /where/is/project1
+$ projectsh --add project1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;same for project2:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cd /where/is/project2
+$ projectsh --add project2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;now if you are on project1 or anywhere, you just need to run:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ projectsh project2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;and magically it will &lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt; into project2 folder.
+If you want to remove a project index, run:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ projectsh --remove project1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If you are using direnv, it will be awesome, you will run projectsh to go into a folder and direnv auto load the environment (from .direnv file) for you. Now, it’s time to work without run thousands of commands everytime.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 23 Dec 2016 00:00:00 -0300</pubDate>
+        <link>http://localhost:4000/2016/12/23/projectsh-for-lazy-people/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/12/23/projectsh-for-lazy-people/</guid>
+        
+        
+      </item>
     
   </channel>
 </rss>
