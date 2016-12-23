@@ -7,7 +7,7 @@ comments: true
 
 Have you ever need to change from one project to another? If you get yourself writing `cd ../../ [...]` just to go somewhere else to execute one command or cat a file or something else, I know your pain.
 
-Recently, I found a project called `direnv`, an environment switcher for the shell, and things start make sense for me. When I go to a folder, direnv automagically execute a script to configure/initialize things, so I just need to start coding. Everything was beautiful until I start programming in projects using API + front-end as separated projects, now things start being annoying again.
+Recently, a friend point me to `direnv` project, an environment switcher for the shell, and things start make sense for me. When I go to a folder, direnv automagically execute a script to configure/initialize things, so I just need to start coding. Everything was beautiful until I start programming in projects using API + front-end as separated projects, now things start being annoying again.
 
 # The Problem
 
