@@ -3,15 +3,17 @@
   <channel>
     <title>PureBeauty</title>
     <description>minimalistic, sexy, beautiful (jekyll) theme.</description>
-    <link>/</link>
-    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 23 Dec 2016 11:27:51 -0300</pubDate>
-    <lastBuildDate>Fri, 23 Dec 2016 11:27:51 -0300</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Wed, 25 Jan 2017 13:48:12 -0300</pubDate>
+    <lastBuildDate>Wed, 25 Jan 2017 13:48:12 -0300</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
         <title>ProjectSH for lazy people</title>
-        <description>&lt;p&gt;Have you ever need to change from one project to another? If you get yourself writing &lt;code class=&quot;highlighter-rouge&quot;&gt;cd ../../ [...]&lt;/code&gt; just to go somewhere else to execute one command or cat a file or something else, I know your pain.&lt;/p&gt;
+        <description>&lt;h1 id=&quot;deprecated-im-using-z-project-instead-thanks-to-stavros&quot;&gt;&lt;strong&gt;[Deprecated] I’m using &lt;a href=&quot;https://github.com/rupa/z/&quot;&gt;z&lt;/a&gt; project instead. Thanks to &lt;a href=&quot;http://stavros.io/&quot;&gt;@stavros&lt;/a&gt;&lt;/strong&gt;&lt;/h1&gt;
+
+&lt;p&gt;Have you ever need to change from one project to another? If you get yourself writing &lt;code class=&quot;highlighter-rouge&quot;&gt;cd ../../ [...]&lt;/code&gt; just to go somewhere else to execute one command or cat a file or something else, I know your pain.&lt;/p&gt;
 
 &lt;p&gt;Recently, a friend point me to &lt;code class=&quot;highlighter-rouge&quot;&gt;direnv&lt;/code&gt; project, an environment switcher for the shell, and things start make sense for me. When I go to a folder, direnv automagically execute a script to configure/initialize things, so I just need to start coding. Everything was beautiful until I start programming in projects using API + front-end as separated projects, now things start being annoying again.&lt;/p&gt;
 
@@ -65,8 +67,8 @@ If you want to remove a project index, run:&lt;/p&gt;
 &lt;p&gt;If you are using direnv, it will be awesome, you will run projectsh to go into a folder and direnv auto load the environment (from .direnv file) for you. Now, it’s time to work without run thousands of commands everytime.&lt;/p&gt;
 </description>
         <pubDate>Fri, 23 Dec 2016 00:00:00 -0300</pubDate>
-        <link>/2016/12/23/projectsh-for-lazy-people/</link>
-        <guid isPermaLink="true">/2016/12/23/projectsh-for-lazy-people/</guid>
+        <link>http://localhost:4000/2016/12/23/projectsh-for-lazy-people/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/12/23/projectsh-for-lazy-people/</guid>
         
         
       </item>
