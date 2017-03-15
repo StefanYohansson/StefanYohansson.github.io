@@ -44,8 +44,6 @@ pg_dump for export database to file `/root/last_backup.sql`;
 
 ts variable with current date assigned;
 
-now on gdrive upload you'll use that hash copied from gdrive mkdir command, --name argument is for name on google drive after upload, here we use `ts` variable to diff backup names, otherwise we'll see only a lot of `last_backup` files.
-
-You can create a script put this code and check integrity comparing previous dump size or something fancy.
+now on gdrive upload you'll use that hash copied from gdrive mkdir command, --name argument is for name on google drive after upload, here we use `ts` variable to diff backup names, otherwise we'll see only a lot of `last_backup` files. You can create a script put this code and check integrity comparing previous dump size or something fancy.
 
 That's all folks.

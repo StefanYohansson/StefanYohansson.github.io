@@ -5,8 +5,8 @@
     <description>minimalistic, sexy, beautiful (jekyll) theme.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 15 Mar 2017 17:25:57 -0300</pubDate>
-    <lastBuildDate>Wed, 15 Mar 2017 17:25:57 -0300</lastBuildDate>
+    <pubDate>Wed, 15 Mar 2017 17:29:10 -0300</pubDate>
+    <lastBuildDate>Wed, 15 Mar 2017 17:29:10 -0300</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
     
       <item>
@@ -50,9 +50,7 @@ then
 
 &lt;p&gt;ts variable with current date assigned;&lt;/p&gt;
 
-&lt;p&gt;now on gdrive upload you’ll use that hash copied from gdrive mkdir command, –name argument is for name on google drive after upload, here we use &lt;code class=&quot;highlighter-rouge&quot;&gt;ts&lt;/code&gt; variable to diff backup names, otherwise we’ll see only a lot of &lt;code class=&quot;highlighter-rouge&quot;&gt;last_backup&lt;/code&gt; files.&lt;/p&gt;
-
-&lt;p&gt;You can create a script put this code and check integrity comparing previous dump size or something fancy.&lt;/p&gt;
+&lt;p&gt;now on gdrive upload you’ll use that hash copied from gdrive mkdir command, –name argument is for name on google drive after upload, here we use &lt;code class=&quot;highlighter-rouge&quot;&gt;ts&lt;/code&gt; variable to diff backup names, otherwise we’ll see only a lot of &lt;code class=&quot;highlighter-rouge&quot;&gt;last_backup&lt;/code&gt; files. You can create a script put this code and check integrity comparing previous dump size or something fancy.&lt;/p&gt;
 
 &lt;p&gt;That’s all folks.&lt;/p&gt;
 </description>
