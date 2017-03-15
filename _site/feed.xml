@@ -5,9 +5,63 @@
     <description>minimalistic, sexy, beautiful (jekyll) theme.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 20 Feb 2017 16:03:06 -0300</pubDate>
-    <lastBuildDate>Mon, 20 Feb 2017 16:03:06 -0300</lastBuildDate>
-    <generator>Jekyll v3.4.0</generator>
+    <pubDate>Wed, 15 Mar 2017 17:25:57 -0300</pubDate>
+    <lastBuildDate>Wed, 15 Mar 2017 17:25:57 -0300</lastBuildDate>
+    <generator>Jekyll v3.4.2</generator>
+    
+      <item>
+        <title>Google Drive for backup small databases</title>
+        <description>&lt;h1 id=&quot;this-tutorial-is-for-unix-distros-but-you-can-adapt-to-your-needs&quot;&gt;This tutorial is for unix distros, but you can adapt to your needs.&lt;/h1&gt;
+
+&lt;p&gt;Well, I need to backup a small client database and needed to do it fast and easy. So I think on the first thing that help me when I think on backup or send a file: Google Drive. Why not?&lt;/p&gt;
+
+&lt;p&gt;Client OS is Debian 8.3 (jessie) and I have installed &lt;a href=&quot;https://github.com/prasmussen/gdrive&quot;&gt;gdrive project&lt;/a&gt; to manage upload. All you need to do is download a binary and install on your machine.&lt;/p&gt;
+
+&lt;h2 id=&quot;configuring-gdrive&quot;&gt;Configuring gdrive&lt;/h2&gt;
+
+&lt;p&gt;After install/copy binary, only thing left to do is run &lt;code class=&quot;highlighter-rouge&quot;&gt;gdrive about&lt;/code&gt; and follow program instruction to generate token.&lt;/p&gt;
+
+&lt;h2 id=&quot;create-target-folder&quot;&gt;Create target folder&lt;/h2&gt;
+
+&lt;p&gt;Now, we need to create a folder to upload our files to google drive, do it using &lt;code class=&quot;highlighter-rouge&quot;&gt;gdrive&lt;/code&gt; by command:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;gdrive mkdir &amp;lt;folder&amp;gt;&lt;/code&gt; this way you will receive an output like this &lt;code class=&quot;highlighter-rouge&quot;&gt;Directory 0BwFhcg1_acLiemZENlQ5Z2Vpd2c created&lt;/code&gt;. Save that hash and go on.&lt;/p&gt;
+
+&lt;h2 id=&quot;pg_dump-command&quot;&gt;&lt;a href=&quot;http://stackoverflow.com/questions/2893954/how-to-pass-in-password-to-pg-dump&quot;&gt;pg_dump command&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;I suppose that you know how to export a dump from your database and pg_dump is how I export from postgres. So let’s talk about it. For avoid pg_dump to ask password every time you’ll need to create a &lt;code class=&quot;highlighter-rouge&quot;&gt;.pgpass&lt;/code&gt; file on home folder of the user that will execute your command, if you’ll put it in a cronjob, you can export a environment variable and export using &lt;code class=&quot;highlighter-rouge&quot;&gt;--dbname&lt;/code&gt; option.&lt;/p&gt;
+
+&lt;p&gt;using .pgpass:
+create &lt;code class=&quot;highlighter-rouge&quot;&gt;.pgpass&lt;/code&gt; file, write &lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:5432:mydbname:postgres:mypass&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;chmod 600 .pgpass&lt;/code&gt;
+then
+&lt;code class=&quot;highlighter-rouge&quot;&gt;pg_dump &amp;gt; last_backup.sql&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;using environment variable:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;export MYDB=postgresql://username:password@127.0.0.1:5432/mydatabase&lt;/code&gt;
+then
+&lt;code class=&quot;highlighter-rouge&quot;&gt;pg_dump --dbname=$MYDB &amp;gt; last_backup.sql&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;concat-all-the-things&quot;&gt;concat all the things&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pg_dump --dbname=$MYDB &amp;gt; /root/last_backup.sql &amp;amp;&amp;amp; ts=$(eval date +&quot;%x_%T&quot;); gdrive upload -p 0BwFhcg1_acLiemZENlQ5Z2Vpd2c --name &quot;last_backup_${ts}&quot; /root/last_backup.sql&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;lets-explain-the-command&quot;&gt;let’s explain the command:&lt;/h3&gt;
+
+&lt;p&gt;pg_dump for export database to file &lt;code class=&quot;highlighter-rouge&quot;&gt;/root/last_backup.sql&lt;/code&gt;;&lt;/p&gt;
+
+&lt;p&gt;ts variable with current date assigned;&lt;/p&gt;
+
+&lt;p&gt;now on gdrive upload you’ll use that hash copied from gdrive mkdir command, –name argument is for name on google drive after upload, here we use &lt;code class=&quot;highlighter-rouge&quot;&gt;ts&lt;/code&gt; variable to diff backup names, otherwise we’ll see only a lot of &lt;code class=&quot;highlighter-rouge&quot;&gt;last_backup&lt;/code&gt; files.&lt;/p&gt;
+
+&lt;p&gt;You can create a script put this code and check integrity comparing previous dump size or something fancy.&lt;/p&gt;
+
+&lt;p&gt;That’s all folks.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 15 Mar 2017 00:00:00 -0300</pubDate>
+        <link>http://localhost:4000/2017/03/15/gdrive-backup-small-databases/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/03/15/gdrive-backup-small-databases/</guid>
+        
+        
+      </item>
     
       <item>
         <title>PSVita buttons isn't working on applications</title>
