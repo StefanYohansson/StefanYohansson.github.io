@@ -5,9 +5,61 @@
     <description>minimalistic, sexy, beautiful (jekyll) theme.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 16 Mar 2017 17:06:46 -0300</pubDate>
-    <lastBuildDate>Thu, 16 Mar 2017 17:06:46 -0300</lastBuildDate>
+    <pubDate>Fri, 31 Mar 2017 15:07:23 -0300</pubDate>
+    <lastBuildDate>Fri, 31 Mar 2017 15:07:23 -0300</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
+    
+      <item>
+        <title>AMOR - a desktop companion</title>
+        <description>&lt;p&gt;Hi,&lt;/p&gt;
+
+&lt;p&gt;I am a crazy person, don’t judge me. Recently, a friend point me out to this software called AMOR. Just for curiosity, “Amor” in portuguese (my main language) means love. &lt;i class=&quot;em em-love_letter&quot;&gt;&lt;/i&gt;&lt;/p&gt;
+
+&lt;p&gt;So what the heck is this software? well, let’s explain by paste git description here: “&lt;strong&gt;A&lt;/strong&gt;musing &lt;strong&gt;M&lt;/strong&gt;isuse &lt;strong&gt;O&lt;/strong&gt;f &lt;strong&gt;R&lt;/strong&gt;esources animation that sits on top of the curent window”. Now you know that is a waste of resource, maybe you’d closed the tab, but if you don’t do it yet, here are some screenshot:&lt;/p&gt;
+
+&lt;blockquote class=&quot;imgur-embed-pub&quot; lang=&quot;en&quot; data-id=&quot;4O0rPqc&quot;&gt;&lt;a href=&quot;//imgur.com/4O0rPqc&quot;&gt;View post on imgur.com&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//s.imgur.com/min/embed.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;blockquote class=&quot;imgur-embed-pub&quot; lang=&quot;en&quot; data-id=&quot;iQfyRoD&quot;&gt;&lt;a href=&quot;//imgur.com/iQfyRoD&quot;&gt;View post on imgur.com&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//s.imgur.com/min/embed.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;blockquote class=&quot;imgur-embed-pub&quot; lang=&quot;en&quot; data-id=&quot;X9MUH1M&quot;&gt;&lt;a href=&quot;//imgur.com/X9MUH1M&quot;&gt;View post on imgur.com&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//s.imgur.com/min/embed.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Yeah, it’s cute AND (^) damn it just take 6MiB from your computer.&lt;/p&gt;
+
+&lt;blockquote class=&quot;imgur-embed-pub&quot; lang=&quot;en&quot; data-id=&quot;RUI1UNO&quot;&gt;&lt;a href=&quot;//imgur.com/RUI1UNO&quot;&gt;View post on imgur.com&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//s.imgur.com/min/embed.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;AMOR is an old software and only have themes from initial release, so I decide to add some themes for me (and some friends). From this initiative born the first theme: Hatsune Miku from Vocaloid Project (screenshots). Craft your theme is an easy task (I was thiking on something like a lot of xmls and pain) but it’s just cut some spritesheet (program use separate pngs), create actions with some sprites and define a scene sequence, so your companion will execute random action from sequence array every time.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://cgit.kde.org/amor.git&quot;&gt;Git repo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;build instructions:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone git://anongit.kde.org/amor.git
+$ cd amor
+$ mkdir build
+$ cd build
+$ git apply &amp;lt;my-hatsune-patch-here&amp;gt;
+$ cmake ..
+$ make
+$ sudo make install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://gist.github.com/StefanYohansson/7980c45feb015ba1193d3d2c3a99540e&quot;&gt;Working patch for Hatsune Miku&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;AMOR is available on package manager for Ubuntu, Arch and Debian (maybe others), but this way only allow you to use default themes, no Hatsune for you yet. I’m working on a fork to add import theme feature in runtime.&lt;/p&gt;
+
+&lt;p&gt;That’s all folks.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 31 Mar 2017 00:00:00 -0300</pubDate>
+        <link>http://localhost:4000/2017/03/31/amor-a-desktop-companion/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/03/31/amor-a-desktop-companion/</guid>
+        
+        
+      </item>
     
       <item>
         <title>Google Drive for backup small databases</title>

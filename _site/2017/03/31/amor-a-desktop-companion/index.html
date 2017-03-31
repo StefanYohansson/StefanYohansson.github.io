@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Blog :: λsnotr</title>
+    <title>AMOR - a desktop companion :: λsnotr</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="minimalistic, sexy, beautiful (jekyll) theme.">
-    <link rel="canonical" href="http://localhost:4000/">
+    <link rel="canonical" href="http://localhost:4000/2017/03/31/amor-a-desktop-companion/">
 
     <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,700,300|Raleway:200' rel='stylesheet' type='text/css'>
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
@@ -69,55 +69,82 @@
 
     <div class="page-content">
       <div class="wrap">
-      <div class="home">
+      <div class="post">
 
-  <div id="presentation"></div>
+  <header class="post-header">
+    <h1>AMOR - a desktop companion</h1>
+    <p class="meta">Mar 31, 2017</p>
+  </header>
 
-  <h1 class="home-p">Posts</h1>
+  <article class="post-content">
+    <p>Hi,</p>
 
-  <ul class="posts">
-     
-      
-      <li>
-        <span class="post-date">Mar 31, 2017</span>
-        <a class="post-link" href="/2017/03/31/amor-a-desktop-companion/">AMOR - a desktop companion</a>
-        <p>When you have memory and a lot of free time</p>
-      </li>
-      
-      <li>
-        <span class="post-date">Mar 15, 2017</span>
-        <a class="post-link" href="/2017/03/15/gdrive-backup-small-databases/">Google Drive for backup small databases</a>
-        <p>Use only on really small databases.</p>
-      </li>
-      
-      <li>
-        <span class="post-date">Feb 20, 2017</span>
-        <a class="post-link" href="/2017/02/20/psvita-buttons-isnt-working-on-applications/">PSVita buttons isn't working on applications</a>
-        <p>When all you want is play something.</p>
-      </li>
-      
-      <li>
-        <span class="post-date">Dec 23, 2016</span>
-        <a class="post-link" href="/2016/12/23/projectsh-for-lazy-people/">ProjectSH for lazy people</a>
-        <p>How direnv lead me to write a new tool to complete it.</p>
-      </li>
-      
-    
-  </ul>
+<p>I am a crazy person, don’t judge me. Recently, a friend point me out to this software called AMOR. Just for curiosity, “Amor” in portuguese (my main language) means love. <i class="em em-love_letter"></i></p>
 
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+<p>So what the heck is this software? well, let’s explain by paste git description here: “<strong>A</strong>musing <strong>M</strong>isuse <strong>O</strong>f <strong>R</strong>esources animation that sits on top of the curent window”. Now you know that is a waste of resource, maybe you’d closed the tab, but if you don’t do it yet, here are some screenshot:</p>
 
+<blockquote class="imgur-embed-pub" lang="en" data-id="4O0rPqc"><a href="//imgur.com/4O0rPqc">View post on imgur.com</a></blockquote>
+<script async="" src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
+<blockquote class="imgur-embed-pub" lang="en" data-id="iQfyRoD"><a href="//imgur.com/iQfyRoD">View post on imgur.com</a></blockquote>
+<script async="" src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
+<blockquote class="imgur-embed-pub" lang="en" data-id="X9MUH1M"><a href="//imgur.com/X9MUH1M">View post on imgur.com</a></blockquote>
+<script async="" src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
+<p>Yeah, it’s cute AND (^) damn it just take 6MiB from your computer.</p>
+
+<blockquote class="imgur-embed-pub" lang="en" data-id="RUI1UNO"><a href="//imgur.com/RUI1UNO">View post on imgur.com</a></blockquote>
+<script async="" src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
+<p>AMOR is an old software and only have themes from initial release, so I decide to add some themes for me (and some friends). From this initiative born the first theme: Hatsune Miku from Vocaloid Project (screenshots). Craft your theme is an easy task (I was thiking on something like a lot of xmls and pain) but it’s just cut some spritesheet (program use separate pngs), create actions with some sprites and define a scene sequence, so your companion will execute random action from sequence array every time.</p>
+
+<p><a href="https://cgit.kde.org/amor.git">Git repo</a></p>
+
+<p>build instructions:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone git://anongit.kde.org/amor.git
+$ cd amor
+$ mkdir build
+$ cd build
+$ git apply &lt;my-hatsune-patch-here&gt;
+$ cmake ..
+$ make
+$ sudo make install
+</code></pre>
 </div>
 
-<script type="text/template" id="presentation_tmpl">
-  <div class="pure-g github-presentation">
-    <div class="pure-u-1 pure-u-sm-1 pure-u-md-1">
-      <img class="github-avatar" src="<%- user.avatar_url %>" />
-    </div>
-    <div class="pure-u-1 pure-u-sm-1 pure-u-md-1">
-      <h1 class="github-name"><span>&lambda;</span><%- user.name %></h1>
-    </div>
-</script>
+<p><a href="https://gist.github.com/StefanYohansson/7980c45feb015ba1193d3d2c3a99540e">Working patch for Hatsune Miku</a></p>
+
+<p>AMOR is available on package manager for Ubuntu, Arch and Debian (maybe others), but this way only allow you to use default themes, no Hatsune for you yet. I’m working on a fork to add import theme feature in runtime.</p>
+
+<p>That’s all folks.</p>
+
+  </article>
+
+  
+  <div id="disqus_thread"></div>
+  <script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+ *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+     var disqus_config = function () {
+     this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+     this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+     };
+   */
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//stefanyohansson.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
+</div>
 
       </div>
     </div>
