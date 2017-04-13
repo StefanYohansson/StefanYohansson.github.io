@@ -5,15 +5,15 @@
     <description>minimalistic, sexy, beautiful (jekyll) theme.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 13 Apr 2017 12:57:59 -0300</pubDate>
-    <lastBuildDate>Thu, 13 Apr 2017 12:57:59 -0300</lastBuildDate>
+    <pubDate>Thu, 13 Apr 2017 13:13:42 -0300</pubDate>
+    <lastBuildDate>Thu, 13 Apr 2017 13:13:42 -0300</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
     
       <item>
         <title>AMOR - Install themes on AMOR from package manager</title>
         <description>&lt;p&gt;Hi, (it’s a short one)&lt;/p&gt;
 
-&lt;p&gt;Recently, I have created a theme for AMOR project, since I finish it I have found another way to install theme without compile AMOR project.&lt;/p&gt;
+&lt;p&gt;Recently, I have created a theme for AMOR project, since I finish it I have found another way to install themes without compile it.&lt;/p&gt;
 
 &lt;p&gt;We only need to put the theme on &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.kde4/share/apps/amor&lt;/code&gt; folder.&lt;/p&gt;
 
@@ -40,7 +40,9 @@
     
       <item>
         <title>AMOR - a desktop companion</title>
-        <description>&lt;p&gt;Hi,&lt;/p&gt;
+        <description>&lt;h1 id=&quot;read-this-if-you-want-the-easy-way&quot;&gt;&lt;a href=&quot;http://stefanyohansson.github.io/2017/04/13/amor-easy-install-hatsune-miku-theme/&quot;&gt;Read this, if you want the easy way.&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;Hi,&lt;/p&gt;
 
 &lt;p&gt;I am a crazy person, don’t judge me. Recently, a friend point me out to this software called AMOR. Just for curiosity, “Amor” in portuguese (my main language) means love. &lt;i class=&quot;em em-love_letter&quot;&gt;&lt;/i&gt;&lt;/p&gt;
 

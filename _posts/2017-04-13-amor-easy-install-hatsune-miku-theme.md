@@ -7,7 +7,7 @@ comments: true
 
 Hi, (it's a short one)
 
-Recently, I have created a theme for AMOR project, since I finish it I have found another way to install theme without compile AMOR project.
+Recently, I have created a theme for AMOR project, since I finish it I have found another way to install themes without compile it.
 
 We only need to put the theme on `~/.kde4/share/apps/amor` folder.
 

@@ -5,6 +5,8 @@ introduction: When you have memory and a lot of free time
 comments: true
 ---
 
+# [Read this, if you want the easy way.](http://stefanyohansson.github.io/2017/04/13/amor-easy-install-hatsune-miku-theme/)
+
 Hi,
 
 I am a crazy person, don't judge me. Recently, a friend point me out to this software called AMOR. Just for curiosity, "Amor" in portuguese (my main language) means love. <i class="em em-love_letter"></i>
