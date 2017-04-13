@@ -30,9 +30,9 @@ build instructions:
 ```
 $ git clone git://anongit.kde.org/amor.git
 $ cd amor
+$ git apply <my-hatsune-patch-here>
 $ mkdir build
 $ cd build
-$ git apply <my-hatsune-patch-here>
 $ cmake ..
 $ make
 $ sudo make install
