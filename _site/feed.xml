@@ -5,9 +5,152 @@
     <description>minimalistic, sexy, beautiful (jekyll) theme.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 15 Jun 2017 16:42:13 -0300</pubDate>
-    <lastBuildDate>Thu, 15 Jun 2017 16:42:13 -0300</lastBuildDate>
-    <generator>Jekyll v3.4.3</generator>
+    <pubDate>Fri, 21 Jul 2017 11:44:11 -0300</pubDate>
+    <lastBuildDate>Fri, 21 Jul 2017 11:44:11 -0300</lastBuildDate>
+    <generator>Jekyll v3.5.1</generator>
+    
+      <item>
+        <title>Why so complicated javascript?</title>
+        <description>&lt;h2 id=&quot;scenario&quot;&gt;Scenario&lt;/h2&gt;
+
+&lt;p&gt;Javascript is a language changing a lot over time. Recently, a wave of tools show up in a scenario where always all you needed to do was include some files and use it.&lt;/p&gt;
+
+&lt;p&gt;If you already know these tools and what they are used for, you probably don’t need to read this post. I’m not listing all pros and cons for every new tool, but I’ll try to justify why we need it.&lt;/p&gt;
+
+&lt;h2 id=&quot;so-why-change-this-simple-workflow&quot;&gt;So why change this simple workflow?&lt;/h2&gt;
+
+&lt;p&gt;Because javascript evolved from build simple DOM manipulations on a website to build complex applications. This new use case for the language requested a lot from the syntax and project organization.&lt;/p&gt;
+
+&lt;p&gt;Thinking this way, people start to use an approach used for all languages. Start from an entry point and let the program decide what will be used and what not.&lt;/p&gt;
+
+&lt;p&gt;A decade ago we have a lot of programs wrote this way:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- html slice --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;lib1.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;lib2.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;app.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// app.js slice&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;lib&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Lib1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;lib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;doSomething&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;lib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'x'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The problem is: all the libraries are imported on the global website/application. It’ll easily expose your architecture and it could generate a lot of variable/object override.&lt;/p&gt;
+
+&lt;p&gt;Using application mindset:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- html slice --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;bundle.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// app.js slice&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Lib1&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'lib1.js'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;lib&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Lib1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;lib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;doSomething&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;lib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'x'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;so what we got now? &lt;strong&gt;Bundles&lt;/strong&gt;. These bundles are built reading an entry point (app.js for previous example) and including on the bundle only javascript pieces &lt;strong&gt;imported&lt;/strong&gt; and &lt;strong&gt;used&lt;/strong&gt;. Using &lt;code class=&quot;highlighter-rouge&quot;&gt;import&lt;/code&gt; we can include only the modules we want on current file scope (vendors or local files).&lt;/p&gt;
+
+&lt;h3 id=&quot;npm&quot;&gt;NPM&lt;/h3&gt;
+
+&lt;p&gt;npm is a dependency manager for javascript. Recently it isn’t the unique, but it’s the “default” when you install node. So why I need npm? because it’ll handle all the vendor libraries for you. “In the old times”, we used to copy and paste all vendors/third parties on our code tree, but projects/libraries start to use lot of libraries and today if we follow what we always did, we will finish the project with tons of duplicated dependencies of dependencies on our final bundle.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The problem: bundle size that implies on final performance.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;webpack&quot;&gt;Webpack&lt;/h3&gt;
+
+&lt;p&gt;Webpack is used for generate the bundle, but not to parse/transpile the new syntax. It’ll match file types based on your configuration and pipe the matching files to plugins, these plugins will parse and extract to outputs (&lt;strong&gt;bundles&lt;/strong&gt;) defined in webpack config.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The problem: include and use only what is necessary.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;babel&quot;&gt;Babel&lt;/h3&gt;
+
+&lt;p&gt;Babel will parse and transpile the new javascript syntax. Without any loader/config babel only receive code and return the same code.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;code -&amp;gt; code
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;but you can add a &lt;code class=&quot;highlighter-rouge&quot;&gt;stage-n&lt;/code&gt; (&lt;em&gt;n&lt;/em&gt; can be 3, 2, 1, 0) loader or any other plugin and it’ll recognize supported syntax for this loader and transpile to “old javascript” for compatibility with browsers that doesn’t support what you want.&lt;/p&gt;
+
+&lt;p&gt;Now, you can use the new syntax that enables to you write less code and do more.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;saveForm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// save logic&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Without the object check &lt;code class=&quot;highlighter-rouge&quot;&gt;ìf (object &amp;amp;&amp;amp;&lt;/code&gt;, you can pass an &lt;code class=&quot;highlighter-rouge&quot;&gt;undefined&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;null&lt;/code&gt; by mistake and receives an &lt;code class=&quot;highlighter-rouge&quot;&gt;TypeError: object is undefined&lt;/code&gt;. This function can be replaced by:&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;saveForm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;email&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;It’ll assign specified object keys to a local variables, plus do all the validations. Neat right?&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The problem: Old javascript can be improved to prevent basic mistakes, so why not?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;more-easy&quot;&gt;More easy&lt;/h3&gt;
+
+&lt;p&gt;But all this complication can be resumed for the contributors and end users.&lt;/p&gt;
+
+&lt;p&gt;This stack can be setup and started for development or production with 3 commands.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Install dependencies&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Start development server&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm start
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;To start development server for contributors, here you can include more tools like &lt;code class=&quot;highlighter-rouge&quot;&gt;hot reload&lt;/code&gt; to reload application on save, &lt;code class=&quot;highlighter-rouge&quot;&gt;browser sync&lt;/code&gt; to synchronize actions between browsers.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Build production artifacts&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm build
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;To generate a folder with artifacts in order to serve it to end users. Generally, you just need to point your apache/nginx to this folder and open it.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 21 Jul 2017 00:00:00 -0300</pubDate>
+        <link>/2017/07/21/why-so-complicated-js/</link>
+        <guid isPermaLink="true">/2017/07/21/why-so-complicated-js/</guid>
+        
+        
+      </item>
     
       <item>
         <title>Patch Inquisition</title>
