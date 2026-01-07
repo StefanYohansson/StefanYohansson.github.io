@@ -7,7 +7,7 @@
     <title>Google Drive for backup small databases :: λsnotr</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="minimalistic, sexy, beautiful (jekyll) theme.">
-    <link rel="canonical" href="/2017/03/15/gdrive-backup-small-databases/">
+    <link rel="canonical" href="http://localhost:4000/2017/03/15/gdrive-backup-small-databases/">
 
     <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,700,300|Raleway:200' rel='stylesheet' type='text/css'>
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
@@ -85,38 +85,38 @@
 
 <h2 id="configuring-gdrive">Configuring gdrive</h2>
 
-<p>After install/copy binary, only thing left to do is run <code class="highlighter-rouge">gdrive about</code> and follow program instruction to generate token.</p>
+<p>After install/copy binary, only thing left to do is run <code class="language-plaintext highlighter-rouge">gdrive about</code> and follow program instruction to generate token.</p>
 
 <h2 id="create-target-folder">Create target folder</h2>
 
-<p>Now, we need to create a folder to upload our files to google drive, do it using <code class="highlighter-rouge">gdrive</code> by command:
-<code class="highlighter-rouge">gdrive mkdir &lt;folder&gt;</code> this way you will receive an output like this <code class="highlighter-rouge">Directory 0BwFhcg1_acLiemZENlQ5Z2Vpd2c created</code>. Save that hash and go on.</p>
+<p>Now, we need to create a folder to upload our files to google drive, do it using <code class="language-plaintext highlighter-rouge">gdrive</code> by command:
+<code class="language-plaintext highlighter-rouge">gdrive mkdir &lt;folder&gt;</code> this way you will receive an output like this <code class="language-plaintext highlighter-rouge">Directory 0BwFhcg1_acLiemZENlQ5Z2Vpd2c created</code>. Save that hash and go on.</p>
 
 <h2 id="pg_dump-command"><a href="http://stackoverflow.com/questions/2893954/how-to-pass-in-password-to-pg-dump">pg_dump command</a></h2>
 
-<p>I suppose that you know how to export a dump from your database and pg_dump is how I export from postgres. So let’s talk about it. For avoid pg_dump to ask password every time you’ll need to create a <code class="highlighter-rouge">.pgpass</code> file on home folder of the user that will execute your command, if you’ll put it in a cronjob, you can export a environment variable and export using <code class="highlighter-rouge">--dbname</code> option.</p>
+<p>I suppose that you know how to export a dump from your database and pg_dump is how I export from postgres. So let’s talk about it. For avoid pg_dump to ask password every time you’ll need to create a <code class="language-plaintext highlighter-rouge">.pgpass</code> file on home folder of the user that will execute your command, if you’ll put it in a cronjob, you can export a environment variable and export using <code class="language-plaintext highlighter-rouge">--dbname</code> option.</p>
 
 <p>using .pgpass:
-create <code class="highlighter-rouge">.pgpass</code> file, write <code class="highlighter-rouge">localhost:5432:mydbname:postgres:mypass</code> and <code class="highlighter-rouge">chmod 600 .pgpass</code>
+create <code class="language-plaintext highlighter-rouge">.pgpass</code> file, write <code class="language-plaintext highlighter-rouge">localhost:5432:mydbname:postgres:mypass</code> and <code class="language-plaintext highlighter-rouge">chmod 600 .pgpass</code>
 then
-<code class="highlighter-rouge">pg_dump &gt; last_backup.sql</code></p>
+<code class="language-plaintext highlighter-rouge">pg_dump &gt; last_backup.sql</code></p>
 
 <p>using environment variable:
-<code class="highlighter-rouge">export MYDB=postgresql://username:password@127.0.0.1:5432/mydatabase</code>
+<code class="language-plaintext highlighter-rouge">export MYDB=postgresql://username:password@127.0.0.1:5432/mydatabase</code>
 then
-<code class="highlighter-rouge">pg_dump --dbname=$MYDB &gt; last_backup.sql</code></p>
+<code class="language-plaintext highlighter-rouge">pg_dump --dbname=$MYDB &gt; last_backup.sql</code></p>
 
 <h2 id="concat-all-the-things">concat all the things</h2>
 
-<p><code class="highlighter-rouge">pg_dump --dbname=$MYDB &gt; /root/last_backup.sql &amp;&amp; ts=$(eval date +"%x_%T"); gdrive upload -p 0BwFhcg1_acLiemZENlQ5Z2Vpd2c --name "last_backup_${ts}" /root/last_backup.sql</code></p>
+<p><code class="language-plaintext highlighter-rouge">pg_dump --dbname=$MYDB &gt; /root/last_backup.sql &amp;&amp; ts=$(eval date +"%x_%T"); gdrive upload -p 0BwFhcg1_acLiemZENlQ5Z2Vpd2c --name "last_backup_${ts}" /root/last_backup.sql</code></p>
 
 <h3 id="lets-explain-the-command">let’s explain the command:</h3>
 
-<p>pg_dump for export database to file <code class="highlighter-rouge">/root/last_backup.sql</code>;</p>
+<p>pg_dump for export database to file <code class="language-plaintext highlighter-rouge">/root/last_backup.sql</code>;</p>
 
 <p>ts variable with current date assigned;</p>
 
-<p>now on gdrive upload you’ll use that hash copied from gdrive mkdir command, –name argument is for name on google drive after upload, here we use <code class="highlighter-rouge">ts</code> variable to diff backup names, otherwise we’ll see only a lot of <code class="highlighter-rouge">last_backup</code> files. You can create a script put this code and check integrity comparing previous dump size or something fancy.</p>
+<p>now on gdrive upload you’ll use that hash copied from gdrive mkdir command, –name argument is for name on google drive after upload, here we use <code class="language-plaintext highlighter-rouge">ts</code> variable to diff backup names, otherwise we’ll see only a lot of <code class="language-plaintext highlighter-rouge">last_backup</code> files. You can create a script put this code and check integrity comparing previous dump size or something fancy.</p>
 
 <p>That’s all folks.</p>
 

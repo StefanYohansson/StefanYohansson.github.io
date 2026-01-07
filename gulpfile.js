@@ -1,53 +1,41 @@
 'use strict';
 
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+var sass = require('gulp-sass')(require('sass'));
 var cleanCSS = require('gulp-clean-css');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var pump = require('pump');
 
-gulp.task('libs', function() {
-   gulp.src('./node_modules/purecss/build/pure-min.css')
-   .pipe(gulp.dest('./lib'));
+function libs() {
+  return gulp.src([
+    './node_modules/purecss/build/pure-min.css',
+    './node_modules/purecss/build/grids-responsive-min.css',
+    './node_modules/whatwg-fetch/fetch.js'
+  ])
+  .pipe(gulp.dest('./lib'));
+}
 
-   gulp.src('./node_modules/whatwg-fetch/jquery.min.js')
-   .pipe(gulp.dest('./lib'));
-
-   gulp.src('./node_modules/whatwg-fetch/color-thief.min.js')
-   .pipe(gulp.dest('./lib'));
-
-
-   gulp.src('./node_modules/whatwg-fetch/fetch.js')
-   .pipe(gulp.dest('./lib'));
-
-   gulp.src('./node_modules/promise-polyfill/promise.min.js')
-   .pipe(gulp.dest('./lib'));
-
-   gulp.src('./node_modules/purecss/build/grids-responsive-min.css')
-   .pipe(gulp.dest('./lib'));
-});
-
-gulp.task('sass', function () {
+function compileSass() {
   return gulp.src('./sass/**/*.scss')
   .pipe(sass().on('error', sass.logError))
   .pipe(gulp.dest('./css'));
-});
+}
 
-gulp.task('sass:watch', function () {
-    gulp.watch('./sass/**/*.scss', ['sass']);
-});
+function watchSass() {
+  gulp.watch('./sass/**/*.scss', compileSass);
+}
 
-gulp.task('minify', function () {
-  gulp.src('./css/*.css')
-    .pipe(cleanCSS({compability: 'ie8'}))
+function minify() {
+  return gulp.src('./css/*.css')
+    .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(rename({
       suffix: '.min'
     }))
     .pipe(gulp.dest('./css/dist'));
-});
+}
 
-gulp.task('compress', function (cb) {
+function compress(cb) {
   pump([
     gulp.src(['lib/fetch.js', 'lib/main.js']),
     uglify({ mangle: true, compress: true }),
@@ -55,4 +43,11 @@ gulp.task('compress', function (cb) {
   ],
     cb
   );
-});
+}
+
+exports.libs = libs;
+exports.sass = compileSass;
+exports.watch = watchSass;
+exports.minify = minify;
+exports.compress = compress;
+exports.default = gulp.series(libs, compileSass, minify);

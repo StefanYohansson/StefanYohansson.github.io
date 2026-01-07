@@ -7,7 +7,7 @@
     <title>ProjectSH for lazy people :: λsnotr</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="minimalistic, sexy, beautiful (jekyll) theme.">
-    <link rel="canonical" href="/2016/12/23/projectsh-for-lazy-people/">
+    <link rel="canonical" href="http://localhost:4000/2016/12/23/projectsh-for-lazy-people/">
 
     <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,700,300|Raleway:200' rel='stylesheet' type='text/css'>
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
@@ -79,25 +79,24 @@
   <article class="post-content">
     <h1 id="deprecated-im-using-z-project-instead-thanks-to-stavros"><strong>[Deprecated] I’m using <a href="https://github.com/rupa/z/">z</a> project instead. Thanks to <a href="http://stavros.io/">@stavros</a></strong></h1>
 
-<p>Have you ever need to change from one project to another? If you get yourself writing <code class="highlighter-rouge">cd ../../ [...]</code> just to go somewhere else to execute one command or cat a file or something else, I know your pain.</p>
+<p>Have you ever need to change from one project to another? If you get yourself writing <code class="language-plaintext highlighter-rouge">cd ../../ [...]</code> just to go somewhere else to execute one command or cat a file or something else, I know your pain.</p>
 
-<p>Recently, a friend point me to <code class="highlighter-rouge">direnv</code> project, an environment switcher for the shell, and things start make sense for me. When I go to a folder, direnv automagically execute a script to configure/initialize things, so I just need to start coding. Everything was beautiful until I start programming in projects using API + front-end as separated projects, now things start being annoying again.</p>
+<p>Recently, a friend point me to <code class="language-plaintext highlighter-rouge">direnv</code> project, an environment switcher for the shell, and things start make sense for me. When I go to a folder, direnv automagically execute a script to configure/initialize things, so I just need to start coding. Everything was beautiful until I start programming in projects using API + front-end as separated projects, now things start being annoying again.</p>
 
 <h1 id="the-problem">The Problem</h1>
 
 <p>normal people: open one terminal, open two tabs, on first tab open things from project 1, maybe tiled on tmux maybe not, on second tab open things from project 2. Hard lift is just switch between tabs.
 Think this way, you are on tab 1, writing things to your front-end project using vim, so you realize that a migration is missing on your API and need to go to another project. It will be nice if we have something like:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ goto project2
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ goto project2
 
 /* edit some things */
 /* execute commands */
 
 $ goto project1
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<p>Or if you are lazy like me: Imagine that you just woke up and will start programming, when you open the terminal, need to <code class="highlighter-rouge">cd</code> to your project folder.</p>
+<p>Or if you are lazy like me: Imagine that you just woke up and will start programming, when you open the terminal, need to <code class="language-plaintext highlighter-rouge">cd</code> to your project folder.</p>
 
 <h1 id="the-solution">The Solution</h1>
 
@@ -105,30 +104,26 @@ $ goto project1
 
 <p>You just need to go into your project 1 folder and type:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cd /where/is/project1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd /where/is/project1
 $ projectsh --add project1
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>same for project2:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cd /where/is/project2
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd /where/is/project2
 $ projectsh --add project2
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>now if you are on project1 or anywhere, you just need to run:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ projectsh project2
-</code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ projectsh project2
+</code></pre></div></div>
 
-<p>and magically it will <code class="highlighter-rouge">cd</code> into project2 folder.
+<p>and magically it will <code class="language-plaintext highlighter-rouge">cd</code> into project2 folder.
 If you want to remove a project index, run:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ projectsh --remove project1
-</code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ projectsh --remove project1
+</code></pre></div></div>
 
 <p>If you are using direnv, it will be awesome, you will run projectsh to go into a folder and direnv auto load the environment (from .direnv file) for you. Now, it’s time to work without run thousands of commands everytime.</p>
 
